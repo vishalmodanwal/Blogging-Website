@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<div class="form-group">
+  <h1>Compose</h1>
+  </form>
+  <form class="" action="/compose" method="post" autocomplete="off">
+      <label>Title</label>
+      <input type="text" class="form-control" name="postTitle">
+      <label>Image Link</label>
+      <input type="text" class="form-control" name="imgurl">
+      <label>Post</label>
+      <textarea class="form-control" name="postBody" cols="30" rows="5">
+      </textarea>
+    <input type="hidden" name="id" value="<%=user._id %>">
+    <button type="submit" name="button" class="btn btn-block btn-primary">publish</button>
+  </form>
+</div>
+  <%- include("partials/footer"); -%>

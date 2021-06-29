@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+<form action="mailto:vishalmnnit123@gmail.com " method="post" enctype="text/plain">
+    <div class=" d-flex justify-content-center text-center">
+        <div class="contact px-5 py-5">
+            <h1 style="color: tomato;">Contact us form</h1> <span>Got a question? We'd love to hear from you. Send us a message and we'll
+                respond as soon as possible</span>
+            <div class="row">
+                <div class="col-md-6"> <input type="text" class="form-control" placeholder="name"  name="name" /> </div>
+                <div class="col-md-6"> <input type="text" class="form-control" placeholder="phone" name="phone"/> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"> <input type="text" class="form-control" placeholder="email" name="email"/> </div>
+                <div class="col-md-6"> <input id="date" type="text" class="form-control"
+                        placeholder="When can we call you?"  name="call-timing"/> </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12"> <input type="text" class="form-control" placeholder="City" name="city"/></div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12"> <textarea rows="6" class="form-control"
+                        placeholder="Let us know how can we help you?" name="query"></textarea> </div>
+            </div>
+            <button class="btn btn-success " type="submit">Send Message <i
+                    class="fa fa-long-arrow-right "></i></button>
+        </div>
+    </div>
+</form>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,99 @@
+
+  table ,td{
+    text-align: center;
+    padding:5px;
+    margin:0 20px 20px 0;
+  }
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+
+#home{
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+}
+
+#footer {
+  padding-top: 2%;
+	text-align: center;
+	bottom:0px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.137);
+  font-size: 1.5rem;
+}
+
+#footer p {
+	font-size: 12px;
+  padding: 2%;
+  
+}
+
+#comment-section {
+  display:none;
+border: 1px thin black;
+padding-bottom: 2%;
+margin-bottom: 10%;
+flex-direction: row;
+text-justify: distribute-all-lines;
+}
+#comment-section p{
+    margin-left:2%;
+    flex-direction: row;
+    text-justify: distribute-all-lines;
+}
+#comment-section input{
+  border-radius:2%;
+  width:65% ;
+  height:40px;
+}
+#comment-section button{
+  text-align: center;
+  height:36px;
+  width:120px;
+}
+.card {
+  text-align: center;
+  margin-top: 5%;
+  
+}
+
+.cardcomment {
+
+  border-radius: 25px;
+  padding: 25px 15px;
+  background-color: #dcffff;;
+  margin: 50px 0;
+  text-align: center;
+}
+.top{
+  display: block;
+}
+.top h2{
+  color:rgb(3, 19, 5); 
+}
+
+.card img {
+  margin: 30px 20px 0 0;
+}
+.circle-img {
+  border-radius: 50%;
+  border: 7px solid #fff;
+  width: 80px;
+  height: 80px;
+}
+
+.postitem{
+    border:1px  black;
+    margin-bottom: 12px;
+    padding-left:4px ;
+}
+.postitem h2{
+  color:rgb(65, 131, 76);
+}
+.form-group{
+  padding-right: 2%;
+  padding-left: 2%;
+}

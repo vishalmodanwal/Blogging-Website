@@ -1,0 +1,33 @@
+<%- include("partials/header"); -%>
+<div id="home" class=container>
+<h1>Home</h1>
+<p><%=StartingContent %> </p>
+<% posts.forEach(function(post) { %>
+   <div class="postitem">
+     
+      <form action="/user-profile" method="post">
+       <input type="hidden" name="thumbnail" value="<%=post.thumbnail%>">
+         <button class="btn  btn-primary">
+            <img src="<%=post.thumbnail%>" style=" display:inline-block; width:40px;height:40px; border-radius: 100%; margin: 5px 5px;">
+            </button>
+       </form>
+       <% if(post.title) {%>
+        <h2> <%= post.title %></h2>
+        <%} %>
+       <% if(post.imgurl) {%>
+         <img style="height:50%;width:50%" src="<%=post.imgurl  %>">
+     <%} %>
+     <% if(post.content) {%>
+        <% if(post.content.length>160) { %>
+    <p> <%= post.content.substring(0,160) + "  ..."%>
+      <a  href="/post/<%=post._id %>">Read more</a>
+      <%} else { %>
+         <p> <%= post.content%> ...
+          <a  href="/post/<%=post._id %>">See more</a>
+         </p>
+            <%} %> 
+            <%} %>
+</div>
+   <%})%>
+</div>
+<%- include("partials/footer");-%>

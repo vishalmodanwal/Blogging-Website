@@ -1,0 +1,97 @@
+<%- include("partials/header"); -%>
+   <div class="card container">
+      <div class="top">
+         <!-- <% if(user.thumbnail==thumbnail){%> -->
+            <!-- <form action="/post/<%=postID%>/delete" method=post>
+               <input type="hidden" name="img1" value="<%= user.thumbnail %>"></input>
+               <input type="hidden" name="img2" value="<%=thumbnail %>"></input>
+               <button class="btn btn-danger">
+                  Delete Post
+                  <i class="fa fa-trash-o" style="font-size: 2rem;"></i>
+               </button>
+            </form>
+            
+            <div class="dropdown" style="margin-left: 50%;">
+               <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown">Edit Post  </button>
+               <ul class="dropdown-menu form-control" >
+                <form  action="/post/<%=postID%>/edit" method="post" autocomplete="off">
+                          <label>Edit Title</label>
+                          <input type="text" class="form-control" name="title">
+                          <label>Edit Content</label>
+                          <textarea class="form-control" name="content" cols="30" rows="6"  placeholder="First copy your post and paste here and then edit">
+                          </textarea>
+                        <button type="submit" name="button" class="btn btn-block  btn-primary">Submit</button>
+                      </form>
+               </ul>
+             </div>
+            <%}%> -->
+               <img src="<%=thumbnail%>" class="circle-img">
+               <div class="container ">
+               <h2><%=title %> </h2>
+               <img src="<%=imgurl%>" style="max-width: 1080px;max-width: 1080px;">
+               <br>
+               <h2> Content:</h2>
+               <p>
+                  <%=content %>
+               </p>
+            </div>
+      </div>
+      <table class="table">
+         <tr>
+            <td>
+               <form action="/post/<%=postID%>/like" method="post">
+                  <input type="hidden" name="id" value="<%=user.googleid %>"></input>
+                  <button id="like-button" class=" btn btn-outline-primary">
+                     <span style=" margin-right:10px">Like</span>
+                     <i class="fa fa-thumbs-o-up" style="font-size:2rem; color:blue"></i>
+                     <span id="like">
+                        <%=like%>
+                     </span>
+                  </button>
+               </form>
+            </td>
+            <td>
+               <form action="/post/<%=postID%>/dislike" method="post">
+                  <input type="hidden" name="id" value="<%=user.googleid %>"></input>
+                  <button id="dislike-button" class="btn btn-outline-primary">
+                     <span style=" margin-right:10px">Dislike</span>
+                     <i class="fa fa-thumbs-o-down" style="font-size:2rem ;color:blue"></i>
+                     <span id="dislike">
+                        <%= dislike %>
+                     </span>
+                  </button>
+               </form>
+            </td>
+            <td>
+               <button  onclick="comment()"id="comment-button" type="button" class=" btn btn-outline-primary">
+                  <span style=" margin-right:10px">Comment</span>
+                  <i class='far fa-comment' style='font-size:2rem; color:blue;'></i>
+                  <span id="comment">
+                     <%=comment %>
+                  </span>
+               </button>
+            </td>
+         </tr>
+      </table>
+      <div id="comment-section">
+         <form action="/post/<%=postID%>/comment" method="post" style="margin-bottom: 10px;">
+            <input type="hidden" name="comment_by" value="<%=user.username %>"></input>
+            <input type="text" name="comment" placeholder="Comment" autocomplete=off >
+            <button type="submit" class="btn btn-primary">
+               submit
+            </button>
+         </form>
+         <%comments.forEach(function(comment){%>
+            
+            <p>
+              <%=comment.comment_by%>:
+              <span>
+               <%=comment.comment %>
+            </span>
+         </p>
+             
+      
+            <%})%>
+      </div>
+   </div>
+   <%- include("partials/footer");-%>
