@@ -1,43 +1,41 @@
 <%- include("partials/header"); -%>
-   
 
+<div class="container">
     <main>
         <img src="<%= user.thumbnail %>" style="border:2px solid white; border-radius:100%; margin-left:15px">
         <h2 style="font-size: 1.5rem; color:darkmagenta">Name:<%=user.username %>
         </h2>
         <a href="/compose" style="font-size:1.5rem;">COMPOSE POST</a>
     </main>
-    <div style="margin:2%">
-        <h1 style="font-size:1.5rem;">Your Post:</h1>
-        <div class="row ">
-            <% posts.forEach(post=>{ %>
+    <h1 style="font-size:1.5rem;">Your Post:</h1>
+ 
+        <% posts.forEach(post=>{ %>
+            <div class="postitem">
                 <% if(post.length!=0){ %>
 
-                    <div class=" col-lg-3 col-md-4 imgcontainer">
-                        <form action="post/<%=post._id%>/delete" method=post>
-                            <button class="btn btn-danger btn-block " type="submit">
-                                Delete Post
-                                <i class="fa fa-trash-o" style="font-size: 2rem;"></i>
-                                <input type="hidden" name="userid" value="<%=user._id %>">
-                            </button>
-                        </form>
-                        <% if(post.title){ %>
+                    <form action="post/<%=post._id%>/delete" method=post>
+                        <button class="btn btn-danger btn-lg " type="submit">
+                            Delete Post
+                            <i class="fa fa-trash-o" style="font-size: 2rem;"></i>
+                            <input type="hidden" name="userid" value="<%=user._id %>">
+                        </button>
+                    </form>
+                    <% if(post.title){ %>
                         <h1>
                             <%=post.title %>
                         </h1>
                         <%} %>
-                        <% if(post.imgurl){ %>
-                            <img class="postimg" src="<%=post.imgurl %>">
-                            <%} %>
-                            <% if(post.content) {%>
-                                <p>
-                                    <%=post.content%>
-                                </p>
-                                <% } %>
-                    </div>
+                            <% if(post.imgurl){ %>
+                                <img class="postimg" src="<%=post.imgurl %>">
+                                <%} %>
+                                    <% if(post.content) {%>
+                                        <p>
+                                            <%=post.content%>
+                                        </p>
+                                        <% } %>
+            </div>
 
-                    <%} %>
-                        <%})%>
-        </div>
-    </div>
-    <%- include("partials/footer");-%>
+    <%} %>
+        <%})%>
+            </div>
+            <%- include("partials/footer");-%>

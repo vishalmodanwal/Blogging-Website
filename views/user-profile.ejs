@@ -1,26 +1,27 @@
 <%- include("partials/header"); -%>
-    <main>
+<div class="container">
+<main>
         <img src="<%= user.thumbnail %>" style="border:2px solid white; border-radius:100%; margin-left:15px">
         <h2 style="font-size: 1.5rem; color:darkmagenta">Name:<%=user.username %>
         </h2>
     </main>
-    <div style="margin:2%">
         <h1 style="font-size:1.5rem;color:black">Post:</h1>
-        <div class=" postitem container">
             <% posts.forEach(post=>{ %>
-                <% if(post.length!=0){ %>
-                    <h2>
-                        <%= post.title %>
-                    </h2>
-                    <% if(post.imgurl){ %>
-                    <img style="height:50%;width:50%" src="<%=post.imgurl  %>">
-                    <% } %>
-                    <% if(post.content) {%>
-                    <p>
-                        <%= post.content%>
-                    </p>
-                    <% } %>
-                    <%}}); %>
+                <div class="postitem">
+                    <% if(post.length!=0){ %>
+                        <h2>
+                            <%= post.title %>
+                        </h2>
+                        <% if(post.imgurl){ %>
+                            <img style="height:50%;width:50%" src="<%=post.imgurl  %>">
+                            <% } %>
+                                <% if(post.content) {%>
+                                    <p>
+                                        <%= post.content%>
+                                    </p>
+                                    <% } %>
+                </div>
+                <%}}); %>
         </div>
 
         <%- include("partials/footer");-%>
